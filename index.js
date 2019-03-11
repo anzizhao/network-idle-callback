@@ -1,4 +1,7 @@
 const DOMContentLoad = new Promise((resolve) => {
+  if (document.readyState === 'complete') {
+    return resolve();
+  }
   document.addEventListener("DOMContentLoaded", resolve);
 })
 
